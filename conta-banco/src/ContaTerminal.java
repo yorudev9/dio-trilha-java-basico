@@ -1,33 +1,42 @@
+
+import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Scanner;
 
 public class ContaTerminal {
-    public static void main(String[] args) throws Exception {
+  String agencia;
+  int conta;
+  String nome_cliente;
+  double saldo;
 
-    System.out.println("== BANCO DIGITAL | SEJA BEM-VINDO(A) ==" + System.lineSeparator()+
-    "Apos informar cada dado, por favor pressione ENTER" + System.lineSeparator());
+  //alterando localização
+  Locale brasil = new Locale("pt", "BR");
 
-    Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
-    
-    System.out.print("Informe o numero da agencia: ");
-    String agencia = scanner.next();
-    
-    System.out.print("Informe o numero da conta: ");
-    int conta = scanner.nextInt();
-    
-    System.out.print( "Informe seu nome: ");
-    String nome_cliente = scanner.next();
+  public void informarAgencia() {
+    System.out.println("Informe numero da Agencia (com digito): ");
+    Scanner scanner = new Scanner(System.in).useLocale(brasil);
+    agencia = scanner.nextLine();
+  }
+  
+  public void informarConta() {
+    System.out.println("Informe numero da Conta: ");
+    Scanner scanner = new Scanner(System.in).useLocale(brasil);
+    conta = scanner.nextInt();
+  }
+  
+  public void informarNomeCliente() {
+    System.out.println("Informe seu nome: ");
+    Scanner scanner = new Scanner(System.in).useLocale(brasil);
+    nome_cliente = scanner.nextLine();
+  }
+  
+  public void informarSaldo() {
+    System.out.println("Informe o valor do deposito inicial: ");
+    Scanner scanner = new Scanner(System.in).useLocale(brasil);
+    saldo = scanner.nextDouble();
+  }
 
-    System.out.print("Informe o valor do deposito inicial: $");
-    double saldo = scanner.nextDouble();
-
-    scanner.close();
-    
-    System.out.println(System.lineSeparator() + "Ola " + nome_cliente + "! Obrigado por criar uma conta no BANCO DIGITAL!" + System.lineSeparator() + "Os dados da sua conta sao:");
-    System.out.println("* Agencia: " + agencia);
-    System.out.println("* Conta: " + conta);
-    System.out.println("* Saldo atual: $" + saldo);
-    System.lineSeparator();
-    System.out.println("=== SESSAO ENCERRADA ===");
-    }
+  //formatar saldo para Real
+  NumberFormat formatSaldo = NumberFormat.getCurrencyInstance(brasil);
+  
 }
