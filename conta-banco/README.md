@@ -3,6 +3,8 @@
 ## 🎯 Objetivo do Projeto
 - Desenvolver um pequeno sistema de conta bancária que deve ser executado no terminal/console do SO.
 
+- *Favor executar Terminal.java*
+
 ## 📝 Descrição 
 
 > ### Sintaxe - Desafio
