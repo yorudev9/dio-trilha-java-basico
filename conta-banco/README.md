@@ -36,7 +36,6 @@
 ---
 ## 🛠️ Melhorias previstas
 - Inserir interface
-- Refatorar código com criação de objetos mais complexos e melhor aplicação do *Scanner*
 - Inserir controle de fluxo para validação de depósitos e retiradas
 - Inserir opção de "Extrato"
 - Login
